@@ -1,6 +1,8 @@
 # DORFKLUB-OS
-This is the OS (aka large CircuitPython sketch) for my "DORFKLUB-MASCHINE" MIDI controller, which can be found [here.](https://github.com/christopherkopic/DORFKLUB-MASCHINE)
 
+![Photo of the finished midi controller](https://github.com/christopherkopic/DORFKLUB-MASCHINE/blob/058f2e99b55e35e41bfa441754c32bc579fbf913/Pictures/DORFKLUB-MASCHINE%20Main.jpg)
+
+This is the OS (aka large CircuitPython sketch) for my "DORFKLUB-MASCHINE" MIDI controller, which can be found [here.](https://github.com/christopherkopic/DORFKLUB-MASCHINE)
 
 ## Note
 This is the current OS uploaded "as is", which means it's a mix of fairly neat, object oriented Python from when I was starting out and some spaghetti-codish bits from when I was quickly tacking on features at the end. 
@@ -17,11 +19,11 @@ Once this version is done, you'll be able to read about it here.
 4. Find the following files / folders in "lib" directory of the bundle and drag them into the "lib" folder on your Pico:
 	1. adafruit_max7219 (folder)
 	2. adafruit_midi (folder)
-  3. adafruit_framebuf.mpy
-  4. adafruit_simplemath.mpy
-  5. keypad.mpy
-  6. rotaryio.mpy
-7. Drag all files from the v1-0 folder of this repo into the main folder on your Pico. Confirm to overwrite the "code.py" file.
+  	3. adafruit_framebuf.mpy
+  	4. adafruit_simplemath.mpy
+  	5. keypad.mpy
+  	6. rotaryio.mpy
+5. Drag all files from the v1-0 folder of this repo into the main folder on your Pico. Confirm to overwrite the "code.py" file.
 
 ## Usage:
 The entire control scheme of this controller is built around the circle of fifths. By default the buttons are not mapped to your standard chromatic scale, but either a major or melodic minor scale in one of the keys on the circle of fifths. The upper row of buttons will play the same notes as the lower row, just on octave higher. Button 8 and 9 will always play the same note. There are button combos to move around the circle to quickly build chord progressions or change the key of your melody, without the need of memorizing scales.
@@ -30,8 +32,8 @@ The entire control scheme of this controller is built around the circle of fifth
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Button 1-16          | Play notes (Velocity always at 127)                                                                                                                                                                                 |
 | Left / Right         | Shift octave up or down                                                                                                                                                                                             |
-| Alt                  | Quickly ramps a control change (channel XX) from 0 to 127 and vice versa, acting essentially like a knob. Used for building punch-in effects                                                                        |
-| Poti 1-3             | Send control change (channels XX to XX)                                                                                                                                                                             |
+| Alt                  | Quickly ramps a control change (channel 23) from 0 to 127 and vice versa, acting essentially like a knob. Used for building punch-in effects                                                                        |
+| Poti 1-3             | Send control change (channels 20 to 22)                                                                                                                                                                             |
 | Encoder turning      | Move around the circle of fiths, selecting different keys                                                                                                                                                           |
 | Encoder click        | Switch between the major and minor side of the circle of fiths. This will also map all notes on the keyboard to a major or minor scale.                                                                             |
 | Encoder double-click | Switch between circle-of-fifth- and chromatic-scale-mode. In the latter mode, buttons 1-16 are mapped to your typical keyboard layout. All button combos related to the c.o.f. won't do anything in chromatic mode. |
